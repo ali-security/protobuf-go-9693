@@ -25,4 +25,4 @@ jobs:
         path: .cache
         key: ${{ runner.os }}-${{ hashFiles('integration_test.go') }}
     - name: Test
-      run: go test -v -timeout=60m -count=1 -failfast integration_test.go
+      run: USE_BAZEL_VERSION=6.1.0 go test -v -timeout=60m -count=1 -failfast integration_test.go
